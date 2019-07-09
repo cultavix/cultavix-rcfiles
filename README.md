@@ -13,5 +13,9 @@ collection of configuration files for vim, bash, ssh, top, tmux, etc
 
 * Copy the `.vimrc` file to the `$HOME` dir or `~` dir.
 
+#### MINTTTY
+
+* Copy the `.minttyrc` file to the `$HOME` dir or `~` dir.
+
 
 TBC
