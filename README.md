@@ -17,5 +17,18 @@ collection of configuration files for vim, bash, ssh, top, tmux, etc
 
 * Copy the `.minttyrc` file to the `$HOME` dir or `~` dir.
 
+#### SSH Config
+
+This is mostly useful if you are using Bastion hosts. It's a nice little trick to allow you to proxy through an SSH box to get into a private network over the internet.
+
+*Example:*
+```
+Host 10.11.*
+  User ubuntu
+    ProxyCommand ssh -o 'ForwardAgent yes' user@bastion.example.com 'ssh-add && nc %h %p'
+```
+##### How to use
+* You simply create `~/.ssh/config` file and paste the contents of my config file or just copy the above example.
+
 
 TBC
