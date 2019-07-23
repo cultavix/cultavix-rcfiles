@@ -17,7 +17,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 ## Terminal - Alacritty
 
-You can find Alacritty here: https://github.com/jwilm/alacritty
+You can find Alacritty here: [Alacritty](https://github.com/jwilm/alacritty)
 
 To install, follow the instructions on their page.
 
