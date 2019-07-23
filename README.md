@@ -25,6 +25,14 @@ I've recently started really using Alacritty in anger as I finally feel its stab
 
 Check out my config for it `alacritty.yml` which you'll need to place in `~/.config/alacritty/alacritty.yml`
 
+#### Features / Configuration changes (more to come)
+* Hack Nerd Font
+* Copy on select
+* Tab = 2 spaces
+* Hide mouse when typing
+* Beam cursor
+* `alt + .` - assigns the alt key as the meta key Note: To use `#` on macOS, you'll need to use `cmd + 3`
+
 Note: You'll want to make sure you have the font installed. I highly recommend: [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
 ## TMUX
