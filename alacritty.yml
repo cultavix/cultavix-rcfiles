@@ -122,7 +122,7 @@ font:
     # style: Italic
 
   # Point size
-  size: 11.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -155,6 +155,8 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
+
+hide_cursor_when_typing: true
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -334,7 +336,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -515,26 +517,29 @@ key_bindings:
   #- { key: H,      mods: Command, action: Hide             }
   #- { key: Q,      mods: Command, action: Quit             }
   #- { key: W,      mods: Command, action: Quit             }
-
-
-  - { key: Key3,      mods: Command, chars: "#",                             }
-  - { key: Period,    mods: Alt,     chars: "\e-\e.",                         }
-  - { key: Paste,                    action: Paste                            }
-  - { key: Copy,                     action: Copy                             }
-  - { key: L,        mods: Control,  action: ClearLogNotice                   }
-  - { key: L,        mods: Control,  chars: "\x0c"                            }
-  - { key: Home,     mods: Alt,      chars: "\x1b[1;3H"                       }
-  - { key: Home,                     chars: "\x1bOH",        mode: AppCursor  }
-  - { key: Home,                     chars: "\x1b[H",        mode: ~AppCursor }
-  - { key: End,      mods: Alt,      chars: "\x1b[1;3F"                       }
-  - { key: End,                      chars: "\x1bOF",        mode: AppCursor  }
-  - { key: End,                      chars: "\x1b[F",        mode: ~AppCursor }
-  - { key: PageUp,   mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+ 
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       }
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       }
+  - { key: Up,       mods: Alt,     chars: "U+21DE"                      }
+  - { key: Down,     mods: Alt,     chars: "U+21DF"                    }
+  - { key: Key3,     mods: Command, chars: "#",                               }
+  - { key: Period,   mods: Alt,     chars: "\e-\e.",                          }
+  - { key: Paste,                   action: Paste                            }
+  - { key: Copy,                    action: Copy                             }
+  - { key: L,       mods: Control,  action: ClearLogNotice                   }
+  - { key: L,       mods: Control,  chars: "\x0c"                            }
+  - { key: Home,    mods: Alt,      chars: "\x1b[1;3H"                       }
+  - { key: Home,                    chars: "\x1bOH",        mode: AppCursor  }
+  - { key: Home,                    chars: "\x1b[H",        mode: ~AppCursor }
+  - { key: End,     mods: Alt,      chars: "\x1b[1;3F"                       }
+  - { key: End,                     chars: "\x1bOF",        mode: AppCursor  }
+  - { key: End,                     chars: "\x1b[F",        mode: ~AppCursor }
+  - { key: Up,   mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~",     mode: Alt        }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                       }
   - { key: PageUp,   mods: Alt,     chars: "\x1b[5;3~"                       }
   - { key: PageUp,                  chars: "\x1b[5~"                         }
-  - { key: PageDown, mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  - { key: Down, mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~",     mode: Alt        }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                       }
   - { key: PageDown, mods: Alt,     chars: "\x1b[6;3~"                       }
@@ -544,16 +549,16 @@ key_bindings:
   - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                        }
   - { key: Insert,                  chars: "\x1b[2~"                         }
   - { key: Delete,                  chars: "\x1b[3~"                         }
-  - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                       }
-  - { key: Left,     mods: Control, chars: "\x1b[1;5D"                       }
-  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                       }
-  - { key: Left,                    chars: "\x1b[D",        mode: ~AppCursor }
-  - { key: Left,                    chars: "\x1bOD",        mode: AppCursor  }
-  - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                       }
-  - { key: Right,    mods: Control, chars: "\x1b[1;5C"                       }
-  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                       }
-  - { key: Right,                   chars: "\x1b[C",        mode: ~AppCursor }
-  - { key: Right,                   chars: "\x1bOC",        mode: AppCursor  }
+    #- { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                       }
+    #- { key: Left,     mods: Control, chars: "\x1b[1;5D"                       }
+    #- { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                       }
+    #- { key: Left,                    chars: "\x1b[D",        mode: ~AppCursor }
+    #- { key: Left,                    chars: "\x1bOD",        mode: AppCursor  }
+    #- { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                       }
+    #- { key: Right,    mods: Control, chars: "\x1b[1;5C"                       }
+    #- { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                       }
+    #- { key: Right,                   chars: "\x1b[C",        mode: ~AppCursor }
+    #- { key: Right,                   chars: "\x1bOC",        mode: AppCursor  }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                       }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
